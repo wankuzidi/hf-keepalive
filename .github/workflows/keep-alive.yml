@@ -2,7 +2,7 @@ name: Keep HF Spaces Alive
 
 on:
   schedule:
-    - cron: "0 * * * *"     # 每小时运行一次
+    - cron: "0 */12 * * *"  # 每 12 小时运行一次
   workflow_dispatch:          # 允许手动触发
 
 jobs:
