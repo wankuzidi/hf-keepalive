@@ -1,0 +1,4 @@
+# 在这里填写你想保活的 Hugging Face Space URL，每行一个
+# 例如：
+# https://your-username-your-space.hf.space
+# https://another-space.hf.space

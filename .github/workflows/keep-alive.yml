@@ -1,0 +1,20 @@
+name: Keep HF Spaces Alive
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"   # 每 5 分钟运行一次
+  workflow_dispatch:          # 允许手动触发
+
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Ping HF Spaces
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+          SPACES: ${{ vars.HF_SPACES }}   # 逗号分隔的 Space URL 列表
+        run: |
+          python keepalive.py
